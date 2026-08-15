@@ -8,5 +8,5 @@ import react from "@vitejs/plugin-react";
 // needs an absolute base path instead, change this to "/your-repo-name/".
 export default defineConfig({
   plugins: [react()],
-  base: "./",
+  base: './'
 });
