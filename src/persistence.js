@@ -102,7 +102,11 @@ export function loadCatalogAll(tabs) {
     if (parsed && Array.isArray(parsed[t.id])) {
       out[t.id] = parsed[t.id]
         .filter((g) => g && typeof g.id === "string" && typeof g.name === "string")
-        .map((g) => (isValidImage(g.image) ? g : { ...g, image: undefined }));
+        .map((g) => ({
+          ...g,
+          star: typeof g.star === "boolean" ? g.star : false,
+          image: isValidImage(g.image) ? g.image : undefined,
+        }));
     } else {
       out[t.id] = withIds(SEED_CATALOG[t.id] || []);
     }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Pencil, Check, X, Plus } from "lucide-react";
+import { Pencil, Check, X, Plus, Star } from "lucide-react";
 import { SEED_TABS, getBadge } from "./seedData.js";
 import {
   isSafeKey,
@@ -135,12 +135,23 @@ export default function App() {
       priceUsed: newGameDraft.priceUsed.trim(),
       priceNew: newGameDraft.priceNew.trim(),
       note: newGameDraft.note.trim(),
+      star: false,
     };
     setCatalog((prev) => ({
       ...prev,
       [activeTab]: [...(prev[activeTab] || []), game],
     }));
     setNewGameDraft(emptyDraft());
+  }
+
+  function toggleStar(gameId) {
+    if (!isSafeKey(activeTab)) return;
+    setCatalog((prev) => ({
+      ...prev,
+      [activeTab]: (prev[activeTab] || []).map((g) =>
+        g.id === gameId ? { ...g, star: !g.star } : g,
+      ),
+    }));
   }
 
   function startEdit(game) {
@@ -224,7 +235,7 @@ export default function App() {
   const rawGames = catalog[activeTab] || [];
   const distinctPlatforms = Array.from(
     new Set(rawGames.map((g) => g.platform).filter(Boolean)),
-  ).sort();
+  ).sort((a, b) => a - b);
 
   let visibleGames =
     selectedPlatforms.length === 0
@@ -364,11 +375,15 @@ export default function App() {
           const isEditing = game.id === editingId;
           const boughtKey = activeTab + "#" + game.id;
           const isBought = !!bought[boughtKey];
+          const isStarred = !!game.star;
           const hasImage =
             typeof game.image === "string" && game.image.length > 0;
 
           return (
-            <div key={game.id} className="game-card">
+            <div
+              key={game.id}
+              className={"game-card" + (isStarred ? " is-starred" : "")}
+            >
               <div className="card-cover">
                 <span
                   className="card-badge"
@@ -376,6 +391,12 @@ export default function App() {
                 >
                   {game.platform || "—"}
                 </span>
+                {isStarred && (
+                  <span className="card-star-badge" title="Starred game">
+                    <Star size={11} fill="#f59e0b" color="#f59e0b" />
+                    <span>Starred</span>
+                  </span>
+                )}
                 {hasImage ? (
                   <>
                     <img className="cover-img" src={game.image} alt="" />
@@ -422,13 +443,32 @@ export default function App() {
                   <>
                     <div className="card-title-row">
                       <div className="card-title">{game.name}</div>
-                      <input
-                        type="checkbox"
-                        className="bought-checkbox"
-                        checked={isBought}
-                        onChange={() => toggleBought(game.id)}
-                        aria-label="Mark as bought"
-                      />
+                      <div className="card-header-actions">
+                        <button
+                          type="button"
+                          className={
+                            "star-btn" + (isStarred ? " is-active" : "")
+                          }
+                          onClick={() => toggleStar(game.id)}
+                          title={isStarred ? "Remove star" : "Star this game"}
+                          aria-label={
+                            isStarred ? "Remove star" : "Star this game"
+                          }
+                        >
+                          <Star
+                            size={18}
+                            fill={isStarred ? "#f59e0b" : "transparent"}
+                            color={isStarred ? "#f59e0b" : "#9ca3af"}
+                          />
+                        </button>
+                        <input
+                          type="checkbox"
+                          className="bought-checkbox"
+                          checked={isBought}
+                          onChange={() => toggleBought(game.id)}
+                          aria-label="Mark as bought"
+                        />
+                      </div>
                     </div>
                     <div className="price-cols">
                       <div>
