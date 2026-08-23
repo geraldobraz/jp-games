@@ -20,7 +20,7 @@ function emptyDraft() {
   return { name: "", platform: "", priceUsed: "", priceNew: "", note: "" };
 }
 
-function GameFields({ draft, onChange }) {
+function GameFields({ draft, onChange, ...props }) {
   return (
     <>
       <input
@@ -29,7 +29,6 @@ function GameFields({ draft, onChange }) {
         placeholder="Game name"
         value={draft.name}
         onChange={(e) => onChange("name", e.target.value)}
-        autoFocus
       />
       <input
         className="field-input"

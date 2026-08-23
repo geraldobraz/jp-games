@@ -10,7 +10,7 @@ export const SEED_CATALOG = {
     { name: "Bravely Default: Flying Fairy HD Remaster", platform: "Switch 2", priceUsed: "", priceNew: "54.99", image: "/jp-games/assets/switch/bravely default flying fairy.webp" },
     { name: "Mario Kart World", platform: "Switch 2", priceUsed: "", priceNew: "109.99", note: "Switch 2 exclusive", image: "/jp-games/assets/switch/mariokart world.jpg" },
     { name: "Fire Emblem: Fortune's Weave", platform: "Switch 2", priceUsed: "", priceNew: "109.99", note: "Releases Sept 17, 2026 — Switch 2 exclusive", image: "/jp-games/assets/switch/Fire Emblem Fortune's Weave Box Art.webp" },
-    { name: "Final Fantasy Tactics: The Ivalice Chronicles", platform: "Switch/2", priceUsed: "44.99", priceNew: "64.99", note: "Sold as separate Switch and Switch 2 Edition SKUs", image: "/jp-games/assets/switch/final fantasy tatics.jpg" },
+    { name: "Final Fantasy Tactics: The Ivalice Chronicles", platform: "Switch/2", priceUsed: "44.99", priceNew: "64.99", note: "Better to buy sw1 game since we have free upgrade to sw2", image: "/jp-games/assets/switch/final fantasy tatics.jpg" },
     { name: "Hades II", platform: "Switch", priceUsed: "59.99", priceNew: "69.99", image: "/jp-games/assets/playstation/Hades II PS5 Cover.webp" },
     { name: "The Adventures of Elliot: The Millennium Tales", platform: "Switch 2", priceUsed: "69.99", priceNew: "79.99", note: "Switch 2 only — not on original Switch", image: "/jp-games/assets/playstation/elliot.jpg" },
     { name: "Final Fantasy Resonance", platform: "Switch/2", priceUsed: "", priceNew: "66.99", note: "Releases Oct 22, 2026 — same cart runs on Switch and Switch 2", image: "/jp-games/assets/playstation/FF resonance.jpg" },
@@ -27,6 +27,8 @@ export const SEED_CATALOG = {
     { name: "Super Mario Galaxy 1+2", platform: "Switch", priceUsed: "", priceNew: "99.99", note: "Cart runs on Switch; free Switch 2 visual patch included", image: "/jp-games/assets/switch/Super Mario Galaxy 1+2.jpg" },
     { name: "Paper Mario: The Thousand-Year Door", platform: "Switch", priceUsed: "74.99", priceNew: "84.99", image: "/jp-games/assets/switch/Paper Mario The Thousand Year Door.jpg" },
     { name: "Mario Tennis Fever", platform: "Switch 2", priceUsed: "", priceNew: "99.99", note: "Switch 2 exclusive", image: "/jp-games/assets/switch/MARIO TENNIS FEVER.jpg" },
+    { name: "Tales of Vesperia", platform: "Switch", priceUsed: "32.00", priceNew: "64.99", image: "/jp-games/assets/switch/tales-of-vesperia.jpg" },
+    { name: "Suikoden I & II HD Remaster", platform: "Switch", priceUsed: "", priceNew: "39.99", image: "/jp-games/assets/switch/suikoden-i-ii-hd-remaster.jpg" },
   ],
 playstation: [
     { name: "Monster Hunter Stories 3: Twisted Reflection", platform: "PS5", priceUsed: "79.99", priceNew: "89.99", image: "/jp-games/assets/playstation/MONSTER HUNTER STORIES 3- TWISTED REFLECTION.jpg" },
@@ -46,6 +48,10 @@ playstation: [
     { name: "Final Fantasy XVI", platform: "PS5", priceUsed: "29.99", priceNew: "69.99", image: "/jp-games/assets/playstation/FINAL FANTASY XVI.jpg" },
     { name: "Persona 5 Tactica", platform: "PS5", priceUsed: "", priceNew: "29.99", image: "/jp-games/assets/playstation/Persona 5 Tactica.jpg" },
     { name: "Crisis Core Final Fantasy VII Reunion", platform: "PS5", priceUsed: "49.99", priceNew: "39.99", image: "/jp-games/assets/playstation/Crisis Core Final Fantasy VII Reunion.jpg" },
+    { name: "Tales of Berseria", platform: "PS5", priceUsed: "36.80", priceNew: "40.00", image: "/jp-games/assets/playstation/tales-of-berseria.jpg" },
+    { name: "Tales of Arise", platform: "PS4/PS5", priceUsed: "", priceNew: "66.99", image: "/jp-games/assets/playstation/tales-of-arise.jpg" },
+    { name: "Trails in the Sky 1st Chapter", platform: "PS5", priceUsed: "", priceNew: "84.99", image: "/jp-games/assets/playstation/TRAILS IN THE SKY 1ST CHAPTER.jpg" },
+    { name: "Trails in the Sky 2nd Chapter", platform: "PS5", priceUsed: "", priceNew: "89.99", image: "/jp-games/assets/playstation/TRAILS IN THE SKY 2ST CHAPTER.jpg" },
   ],
   amiibo: [
     // Pokémon Series
