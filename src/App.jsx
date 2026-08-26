@@ -399,7 +399,13 @@ export default function App() {
                 )}
                 {hasImage ? (
                   <>
-                    <img className="cover-img" src={game.image} alt="" />
+                    <img
+                      className="cover-img"
+                      src={game.image}
+                      alt={game.name}
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <button
                       type="button"
                       className="cover-overlay-btn"

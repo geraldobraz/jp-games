@@ -239,6 +239,8 @@ h1 {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 380px;
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;

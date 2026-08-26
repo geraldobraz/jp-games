@@ -4,17 +4,16 @@ export const SEED_CATALOG = {
     { name: "Animal Well", platform: "Switch", priceUsed: "39.99", priceNew: "49.99", star: false, note: "Steam - $22.39", image: "/jp-games/assets/switch/ANIMAL WELL.jpg" },
     { name: "Bravely Default: Flying Fairy HD Remaster", platform: "Switch 2", priceUsed: "", priceNew: "54.99", star: true, image: "/jp-games/assets/switch/bravely default flying fairy.webp" },
     { name: "Dead Cells: Return to Castlevania", platform: "Switch", priceUsed: "29.99", priceNew: "59.99", star: false, image: "/jp-games/assets/switch/DEAD CELLS- RETURN TO CASTLEVANIA.jpg" },
-    { name: "Dragon Quest I & II HD-2D Remake", platform: "Switch/2", priceUsed: "59.99", priceNew: "79.99", star: false, note: "Sold as two distinct SKUs (Switch and Switch 2) — no cross-upgrade path, pick one", image: "/jp-games/assets/switch/dragon quest 1&2 remake.jpg" },
+    { name: "Dragon Quest I & II HD-2D Remake", platform: "Switch/2", priceUsed: "59.99", priceNew: "79.99", star: true, note: "Sold as two distinct SKUs (Switch and Switch 2) — no cross-upgrade path, pick one", image: "/jp-games/assets/switch/dragon quest 1&2 remake.jpg" },
     { name: "Eternights", platform: "Switch", priceUsed: "39.99", priceNew: "39.99", star: true, image: "/jp-games/assets/switch/eternights.jpg" },
-    { name: "Final Fantasy Resonance", platform: "Switch/2", priceUsed: "", priceNew: "66.99", star: true, note: "Releases Oct 22, 2026 — same cart runs on Switch and Switch 2", image: "/jp-games/assets/playstation/FF resonance.jpg" },
     { name: "Final Fantasy Tactics: The Ivalice Chronicles", platform: "Switch/2", priceUsed: "44.99", priceNew: "64.99", star: true, note: "Better to buy sw1 game since we have free upgrade to sw2", image: "/jp-games/assets/switch/final fantasy tatics.jpg" },
     { name: "Fire Emblem: Engage", platform: "Switch", priceUsed: "", priceNew: "79.99", star: true, image: "/jp-games/assets/switch/fire emblem engage.jpg" },
     { name: "Fire Emblem: Fortune's Weave", platform: "Switch 2", priceUsed: "", priceNew: "109.99", star: true, note: "Releases Sept 17, 2026 — Switch 2 exclusive", image: "/jp-games/assets/switch/Fire Emblem Fortune's Weave Box Art.webp" },
     { name: "Fire Emblem: Three Houses", platform: "Switch", priceUsed: "59.99", priceNew: "84.99", star: true, image: "/jp-games/assets/switch/Fire Emblem Three Houses Cover Art.webp" },
     { name: "Hades II", platform: "Switch", priceUsed: "59.99", priceNew: "69.99", star: false, image: "/jp-games/assets/playstation/Hades II PS5 Cover.webp" },
-    { name: "Luigi's Mansion 2 HD", platform: "Switch", priceUsed: "59.99", priceNew: "84.99", star: true, image: "/jp-games/assets/switch/Luigi's Mansion 2 HD.jpg" },
-    { name: "Luigi's Mansion 3", platform: "Switch", priceUsed: "59.99", priceNew: "84.99", star: true, image: "/jp-games/assets/switch/Luigi's Mansion 3.jpg" },
-    { name: "Mario Kart World", platform: "Switch 2", priceUsed: "", priceNew: "109.99", star: false, note: "Switch 2 exclusive", image: "/jp-games/assets/switch/mariokart world.jpg" },
+    { name: "Luigi's Mansion 2 HD", platform: "Switch", priceUsed: "59.99", priceNew: "84.99", star: false, image: "/jp-games/assets/switch/Luigi's Mansion 2 HD.jpg" },
+    { name: "Luigi's Mansion 3", platform: "Switch", priceUsed: "59.99", priceNew: "84.99", star: false, image: "/jp-games/assets/switch/Luigi's Mansion 3.jpg" },
+    { name: "Mario Kart World", platform: "Switch 2", priceUsed: "", priceNew: "109.99", star: true, note: "Switch 2 exclusive", image: "/jp-games/assets/switch/mariokart world.jpg" },
     { name: "Mario Tennis Fever", platform: "Switch 2", priceUsed: "", priceNew: "99.99", star: false, note: "Switch 2 exclusive", image: "/jp-games/assets/switch/MARIO TENNIS FEVER.jpg" },
     { name: "Orbitals", platform: "Switch 2", priceUsed: "", priceNew: "69.99", star: false, note: "Releases Sept 2026 — Switch 2 exclusive", image: "/jp-games/assets/switch/ORBITALS.jpg" },
     { name: "Paper Mario: The Thousand-Year Door", platform: "Switch", priceUsed: "74.99", priceNew: "84.99", star: false, image: "/jp-games/assets/switch/Paper Mario The Thousand Year Door.jpg" },
@@ -28,7 +27,6 @@ export const SEED_CATALOG = {
     { name: "The Adventures of Elliot: The Millennium Tales", platform: "Switch 2", priceUsed: "69.99", priceNew: "79.99", star: true, note: "Switch 2 only — not on original Switch", image: "/jp-games/assets/playstation/elliot.jpg" },
     { name: "The Great Ace Attorney Chronicles", platform: "Switch", priceUsed: "", priceNew: "44.99", star: false, image: "/jp-games/assets/switch/THE GREAT ACE ATTORNEY CHRONICLES.jpg" },
     { name: "Triangle Strategy", platform: "Switch", priceUsed: "69.99", priceNew: "79.99", star: true, image: "/jp-games/assets/switch/Triangle Strategy.jpg" },
-    { name: "Xenoblade Chronicles 3", platform: "Switch", priceUsed: "", priceNew: "79.99", star: false, note: "A separate Switch 2 Edition ships Dec 3, 2026 — this is the original Switch release", image: "/jp-games/assets/switch/Xenoblade Chronicles 3,jpg.jpg" },
   ],
   playstation: [
     { name: "007 First Light", platform: "PS5", priceUsed: "", priceNew: "89.99", star: false, image: "/jp-games/assets/playstation/007 First Light.jpg" },
@@ -54,12 +52,6 @@ export const SEED_CATALOG = {
     { name: "Yakuza Complete Series", platform: "PS4/PS5", priceUsed: "", priceNew: "89.00", star: false, note: "7-game bundle — Yakuza 0: Director's Cut is PS5-only even within this bundle", image: "/jp-games/assets/playstation/Yakuza Complete Series.jpg" },
   ],
   amiibo: [
-    // Pokémon Series
-    { name: "Pokémon - Detective Pikachu", platform: "Amiibo", priceUsed: "", priceNew: "77.34", star: false, note: "Standalone release", image: "/jp-games/assets/amiibo/Pokémon - Detective Pikachu.jpg" },
-    { name: "Pokémon - Lucario", platform: "Amiibo", priceUsed: "", priceNew: "39.99", star: false, note: "Super Smash Bros. series", image: "/jp-games/assets/amiibo/Lucario Amiibo Package.avif" },
-    { name: "Pokémon - Mewtwo", platform: "Amiibo", priceUsed: "", priceNew: "45.00", star: false, note: "Super Smash Bros. series", image: "/jp-games/assets/amiibo/Pokémon - Mewtwo.jpg" },
-    { name: "Pokémon - Pokémon Trainer", platform: "Amiibo", priceUsed: "", priceNew: "117.00", star: false, note: "Super Smash Bros. series", image: "/jp-games/assets/amiibo/Pokémon - Pokémon Trainer.jpg" },
-    
     // The Legend of Zelda Series
     { name: "The Legend of Zelda - Link (Archer)", platform: "Amiibo", priceUsed: "", priceNew: "44.99", star: false, note: "Breath of the Wild variant", image: "/jp-games/assets/amiibo/The Legend of Zelda - Link (Archer).jpg" },
     { name: "The Legend of Zelda: Link's Awakening Series", platform: "Amiibo", priceUsed: "", priceNew: "45.99", star: false, note: "Breath of the Wild variant", image: "/jp-games/assets/amiibo/Link Amiibo - Legend of Zelda- Link's Awakening Series.jpg" },
