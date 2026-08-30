@@ -82,12 +82,18 @@ export const SEED_CATALOG = {
     // Persona Series
     { name: "Persona - Joker", platform: "Amiibo", priceUsed: "", priceNew: "94.16", star: false, note: "Super Smash Bros. series", image: "/jp-games/assets/amiibo/Persona - Joker.jpg" },
   ],
+  mtg: [
+    { name: "Spell Pierce", platform: "MTG", priceUsed: "", priceNew: "6.00", star: false, image: "/jp-games/assets/mtg/Spell Pierce.jpg.png" },
+    { name: "Counterspell", platform: "MTG", priceUsed: "", priceNew: "23.00", star: false, image: "/jp-games/assets/mtg/Counterspell.jpg" },
+    { name: "Snuff Out", platform: "MTG", priceUsed: "", priceNew: "15.00", star: false, image: "/jp-games/assets/mtg/Snuff Out.jpg" },
+  ],
 };
 
 export const SEED_TABS = [
   { id: "switch", label: "Nintendo Switch" },
   { id: "playstation", label: "PlayStation" },
   { id: "amiibo", label: "Amiibo" },
+  { id: "mtg", label: "MTG" },
 ];
 
 export const BADGE_STYLES = {
@@ -98,6 +104,7 @@ export const BADGE_STYLES = {
   "PS5": { backgroundColor: "#003791" },
   "PS4/PS5": { backgroundColor: "#003791" },
   "Amiibo": { backgroundColor: "#c41e3a" },
+  "MTG": { backgroundColor: "#c56f14" },
   "FALLBACK_BADGE": { backgroundColor: "#4a4f57" },
 };
 

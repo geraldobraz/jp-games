@@ -68,6 +68,12 @@ export function loadTabs() {
           seen.add(t.id);
           clean.push({ id: t.id, label: t.label.slice(0, 80) });
         });
+        SEED_TABS.forEach((seedTab) => {
+          if (!seen.has(seedTab.id)) {
+            seen.add(seedTab.id);
+            clean.push({ ...seedTab });
+          }
+        });
         if (clean.length) return clean;
       }
     } catch (e) {
@@ -99,7 +105,7 @@ export function loadCatalogAll(tabs) {
   }
   tabs.forEach((t) => {
     if (!isSafeKey(t.id)) return;
-    if (parsed && Array.isArray(parsed[t.id])) {
+    if (parsed && Array.isArray(parsed[t.id]) && parsed[t.id].length > 0) {
       out[t.id] = parsed[t.id]
         .filter((g) => g && typeof g.id === "string" && typeof g.name === "string")
         .map((g) => ({
