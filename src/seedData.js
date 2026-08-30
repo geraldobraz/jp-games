@@ -5,6 +5,7 @@ export const SEED_CATALOG = {
     { name: "Bravely Default: Flying Fairy HD Remaster", platform: "Switch 2", priceUsed: "", priceNew: "62.14", star: true, image: "/jp-games/assets/switch/bravely default flying fairy.webp" },
     { name: "Dead Cells: Return to Castlevania", platform: "Switch", priceUsed: "33.89", priceNew: "67.79", star: false, image: "/jp-games/assets/switch/DEAD CELLS- RETURN TO CASTLEVANIA.jpg" },
     { name: "Dragon Quest I & II HD-2D Remake", platform: "Switch/2", priceUsed: "67.79", priceNew: "90.39", star: true, note: "Sold as two distinct SKUs (Switch and Switch 2) — no cross-upgrade path, pick one", image: "/jp-games/assets/switch/dragon quest 1&2 remake.jpg" },
+    { name: "EIYUDEN CHRONICLES: HUNDRED HEROES", platform: "Switch", priceUsed: "45.19", priceNew: "56.49", star: false, image: "/jp-games/assets/switch/EIYUDEN CHRONICLES- HUNDRED HEROES.jpg" },
     { name: "Eternights", platform: "Switch", priceUsed: "45.19", priceNew: "45.19", star: true, image: "/jp-games/assets/switch/eternights.jpg" },
     { name: "Final Fantasy Tactics: The Ivalice Chronicles", platform: "Switch/2", priceUsed: "50.84", priceNew: "73.44", star: true, note: "Better to buy sw1 game since we have free upgrade to sw2", image: "/jp-games/assets/switch/final fantasy tatics.jpg" },
     { name: "Fire Emblem: Engage", platform: "Switch", priceUsed: "", priceNew: "90.39", star: true, image: "/jp-games/assets/switch/fire emblem engage.jpg" },

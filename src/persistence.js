@@ -105,16 +105,24 @@ export function loadCatalogAll(tabs) {
   }
   tabs.forEach((t) => {
     if (!isSafeKey(t.id)) return;
+    const seedList = SEED_CATALOG[t.id] || [];
     if (parsed && Array.isArray(parsed[t.id]) && parsed[t.id].length > 0) {
-      out[t.id] = parsed[t.id]
+      const existing = parsed[t.id]
         .filter((g) => g && typeof g.id === "string" && typeof g.name === "string")
         .map((g) => ({
           ...g,
           star: typeof g.star === "boolean" ? g.star : false,
           image: isValidImage(g.image) ? g.image : undefined,
         }));
+      const existingNames = new Set(existing.map((g) => g.name.toLowerCase()));
+      seedList.forEach((seedItem) => {
+        if (!existingNames.has(seedItem.name.toLowerCase())) {
+          existing.push({ id: makeId("g"), ...seedItem });
+        }
+      });
+      out[t.id] = existing;
     } else {
-      out[t.id] = withIds(SEED_CATALOG[t.id] || []);
+      out[t.id] = withIds(seedList);
     }
   });
   return out;
