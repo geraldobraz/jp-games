@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Pencil, Check, X, Plus, Star } from "lucide-react";
+import { Pencil, Check, X, Plus, Star, Eye, EyeOff } from "lucide-react";
 import { SEED_TABS, getBadge } from "./seedData.js";
 import {
   isSafeKey,
@@ -13,6 +13,8 @@ import {
   saveActiveTab,
   loadBought,
   saveBought,
+  loadHidePrices,
+  saveHidePrices,
 } from "./persistence.js";
 import { readAndResizeImage } from "./imageUtils.js";
 
@@ -81,6 +83,7 @@ export default function App() {
   const [editDraft, setEditDraft] = useState(emptyDraft());
   const [selectedPlatforms, setSelectedPlatforms] = useState([]);
   const [sortByBadge, setSortByBadge] = useState(false);
+  const [hidePrices, setHidePrices] = useState(() => loadHidePrices());
   const [saveWarning, setSaveWarning] = useState("");
 
   // Persist to localStorage whenever the relevant piece of state changes.
@@ -104,6 +107,10 @@ export default function App() {
   useEffect(() => {
     saveBought(bought);
   }, [bought]);
+
+  useEffect(() => {
+    saveHidePrices(hidePrices);
+  }, [hidePrices]);
 
   function setActiveTab(id) {
     setActiveTabState(id);
@@ -351,13 +358,31 @@ export default function App() {
             );
           })}
         </div>
-        <button
-          type="button"
-          className={"sort-toggle" + (sortByBadge ? " is-active" : "")}
-          onClick={() => setSortByBadge((v) => !v)}
-        >
-          {sortByBadge ? "Sorted by badge ✕" : "Sort by badge"}
-        </button>
+        <div className="toolbar-actions">
+          <button
+            type="button"
+            className={"action-toggle" + (hidePrices ? " is-active" : "")}
+            onClick={() => setHidePrices((v) => !v)}
+            title={hidePrices ? "Show prices" : "Hide prices"}
+          >
+            {hidePrices ? (
+              <>
+                <Eye size={14} /> Show prices
+              </>
+            ) : (
+              <>
+                <EyeOff size={14} /> Hide prices
+              </>
+            )}
+          </button>
+          <button
+            type="button"
+            className={"sort-toggle" + (sortByBadge ? " is-active" : "")}
+            onClick={() => setSortByBadge((v) => !v)}
+          >
+            {sortByBadge ? "Sorted by badge ✕" : "Sort by badge"}
+          </button>
+        </div>
       </div>
 
       {rawGames.length === 0 && (
@@ -476,20 +501,22 @@ export default function App() {
                         />
                       </div>
                     </div>
-                    <div className="price-cols">
-                      <div>
-                        <div className="price-label">New</div>
-                        <div className="price-new">
-                          {game.priceNew ? `$${game.priceNew}` : "—"}
+                    {!hidePrices && (
+                      <div className="price-cols">
+                        <div>
+                          <div className="price-label">New</div>
+                          <div className="price-new">
+                            {game.priceNew ? `$${game.priceNew}` : "—"}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="price-label">Used</div>
+                          <div className="price-used">
+                            {game.priceUsed ? `$${game.priceUsed}` : "—"}
+                          </div>
                         </div>
                       </div>
-                      <div>
-                        <div className="price-label">Used</div>
-                        <div className="price-used">
-                          {game.priceUsed ? `$${game.priceUsed}` : "—"}
-                        </div>
-                      </div>
-                    </div>
+                    )}
                     {game.note && <div className="card-note">{game.note}</div>}
                     <button
                       type="button"

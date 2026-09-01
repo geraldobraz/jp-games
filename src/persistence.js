@@ -162,3 +162,13 @@ export function loadBought() {
 export function saveBought(bought) {
   lsSet(LS_BOUGHT, JSON.stringify(bought));
 }
+
+const LS_HIDE_PRICES = "gamesGridHidePrices";
+
+export function loadHidePrices() {
+  return lsGet(LS_HIDE_PRICES) === "true";
+}
+
+export function saveHidePrices(hide) {
+  lsSet(LS_HIDE_PRICES, hide ? "true" : "false");
+}

@@ -190,6 +190,13 @@ h1 {
   background: #fff;
   color: var(--text-secondary);
 }
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.action-toggle,
 .sort-toggle {
   font-size: 13px;
   padding: 7px 14px;
@@ -201,7 +208,17 @@ h1 {
   cursor: pointer;
   font-family: inherit;
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
 }
+.action-toggle:hover,
+.sort-toggle:hover {
+  border-color: #c5cad2;
+  color: var(--text-primary);
+}
+.action-toggle.is-active,
 .sort-toggle.is-active {
   background: var(--blue);
   color: #fff;
