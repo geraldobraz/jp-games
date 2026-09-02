@@ -1,0 +1,20 @@
+{
+  "name": "JP Games",
+  "short_name": "JP Games",
+  "description": "Track and browse Japanese games for sale across Switch, PlayStation, and more.",
+  "start_url": "/jp-games/",
+  "scope": "/jp-games/",
+  "display": "standalone",
+  "background_color": "#f4f5f7",
+  "theme_color": "#bc002d",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/jp-games/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}
+
