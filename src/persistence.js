@@ -172,3 +172,24 @@ export function loadHidePrices() {
 export function saveHidePrices(hide) {
   lsSet(LS_HIDE_PRICES, hide ? "true" : "false");
 }
+
+export function getDefaultCatalog() {
+  const out = {};
+  SEED_TABS.forEach((t) => {
+    out[t.id] = withIds(SEED_CATALOG[t.id] || []);
+  });
+  return out;
+}
+
+export function clearAllStorage() {
+  try {
+    window.localStorage.removeItem(LS_TABS);
+    window.localStorage.removeItem(LS_CATALOG);
+    window.localStorage.removeItem(LS_BOUGHT);
+    window.localStorage.removeItem(LS_ACTIVE_TAB);
+    window.localStorage.removeItem(LS_HIDE_PRICES);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Pencil, Check, X, Plus, Star, Eye, EyeOff } from "lucide-react";
+import { Pencil, Check, X, Plus, Star, Eye, EyeOff, RotateCcw } from "lucide-react";
 import { SEED_TABS, getBadge } from "./seedData.js";
 import {
   isSafeKey,
@@ -15,6 +15,8 @@ import {
   saveBought,
   loadHidePrices,
   saveHidePrices,
+  getDefaultCatalog,
+  clearAllStorage,
 } from "./persistence.js";
 import { readAndResizeImage } from "./imageUtils.js";
 
@@ -117,6 +119,28 @@ export default function App() {
     setEditingId(null);
     setSelectedPlatforms([]);
     setSortByBadge(false);
+  }
+
+  function handleReset() {
+    if (
+      !window.confirm(
+        "Reset all data to defaults? This will clear your custom tabs, game edits, bought status, and star changes."
+      )
+    )
+      return;
+    clearAllStorage();
+    const defaultTabs = SEED_TABS.slice();
+    const defaultCatalog = getDefaultCatalog();
+    setTabs(defaultTabs);
+    setCatalog(defaultCatalog);
+    setBought({});
+    setHidePrices(false);
+    setEditingId(null);
+    setNewTabLabel("");
+    setNewGameDraft({ name: "", platform: "", priceUsed: "", priceNew: "", note: "" });
+    setSelectedPlatforms([]);
+    setSortByBadge(false);
+    setActiveTabState(defaultTabs[0]?.id ?? null);
   }
 
   function handleAddTab(e) {
@@ -381,6 +405,14 @@ export default function App() {
             onClick={() => setSortByBadge((v) => !v)}
           >
             {sortByBadge ? "Sorted by badge ✕" : "Sort by badge"}
+          </button>
+          <button
+            type="button"
+            className="action-toggle reset-btn"
+            onClick={handleReset}
+            title="Reset all data to defaults"
+          >
+            <RotateCcw size={14} /> Reset
           </button>
         </div>
       </div>

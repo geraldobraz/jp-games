@@ -224,6 +224,15 @@ h1 {
   color: #fff;
   border-color: var(--blue);
 }
+.reset-btn {
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+.reset-btn:hover {
+  background: #fef2f2;
+  border-color: #dc2626;
+  color: #dc2626;
+}
 
 .empty-tab {
   padding: 8px 4px 20px;
